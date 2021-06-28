@@ -3,15 +3,10 @@ import Card from '../../Card/Card';
 import UserItem from '../UserItem/UserItem';
 // import styles from './UsersList.module.css';
 
-const UsersList = () => {
-	const users = [
-		{ name: 'Mazen', age: 26, id: 1 },
-		{ name: 'Mazen', age: 26, id: 2 },
-	];
-
+const UsersList = ({ users, onDeleteUser }) => {
 	return (
 		<Card>
-			<UserItem users={users} />
+			<UserItem users={users} onDeleteUser={onDeleteUser} />
 		</Card>
 	);
 };

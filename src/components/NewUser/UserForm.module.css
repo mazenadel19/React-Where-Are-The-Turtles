@@ -13,7 +13,7 @@
 	padding: 5px;
 }
 
-.form + button {
+.form button {
 	background-color: rgb(57, 3, 110);
 	color: white;
 	border: 1px solid rebeccapurple;

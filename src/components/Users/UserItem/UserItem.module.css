@@ -2,4 +2,9 @@
 	border: 1px solid #aaa;
 	padding: 5px;
 	margin: 10px 0;
+	cursor: pointer;
+}
+
+.user:hover{
+	background-color: tomato;
 }

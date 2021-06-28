@@ -1,0 +1,13 @@
+.button {
+	background-color: rgb(57, 3, 110);
+	color: white;
+	font-weight: bold;
+	border: 1px solid rebeccapurple;
+	padding: 0.5rem 1.5rem;
+	cursor: pointer;
+	transition: all 0.5s ease;
+}
+
+.button:hover {
+	background-color: rgb(145, 102, 153);
+}

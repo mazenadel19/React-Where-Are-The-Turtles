@@ -1,26 +1,19 @@
-.userform {
-	width: 50%;
-	background-color: white;
-	padding: 2rem;
-	border-radius: 12px;
-}
-
-.userform div {
+.form div {
 	padding: 10px 10px 10px 0;
 }
 
-.userform label {
+.form label {
 	font-weight: bold;
 	padding-bottom: 10px;
 	display: block;
 }
 
-.userform input {
+.form input {
 	width: 100%;
 	padding: 5px;
 }
 
-.userform button {
+.form + button {
 	background-color: rgb(57, 3, 110);
 	color: white;
 	border: 1px solid rebeccapurple;

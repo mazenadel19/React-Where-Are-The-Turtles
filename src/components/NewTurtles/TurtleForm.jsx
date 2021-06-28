@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import Card from '../Card/Card';
-import styles from './UserForm.module.css';
+import styles from './TurtleForm.module.css';
 
-const UserForm = ({ onAddUser }) => {
+const TurtleForm = ({ onAddTurtle }) => {
 	const [name, setName] = useState('');
 	const [age, setAge] = useState('');
 
@@ -16,11 +16,12 @@ const UserForm = ({ onAddUser }) => {
 
 	const submitHandler = (e) => {
 		e.preventDefault();
-		if (name.trim().length === 0) return alert("Username can't be empty");
-		if (age.trim().length === 0) return alert("age can't be empty");
-		if (age < 0) return alert(`age can't be a negative number`);
+		if (name.trim().length === 0) return alert("Turtle name can't be empty");
+		if (age.trim().length === 0) return alert("Turtle age can't be empty");
+		if (age < 0)
+			return alert(`RIP Turtle /n Turtle age can't be a negative number`);
 
-		onAddUser({
+		onAddTurtle({
 			name,
 			age,
 		});
@@ -32,17 +33,17 @@ const UserForm = ({ onAddUser }) => {
 		<Card>
 			<form method='post' className={styles.form} onSubmit={submitHandler}>
 				<div>
-					<label htmlFor='UserName'>Username</label>
+					<label htmlFor='name'>Turtle Name</label>
 					<input
 						type='text'
-						name='UserName'
-						id='UserName'
+						name='name'
+						id='name'
 						value={name}
 						onChange={nameChangeHandler}
 					/>
 				</div>
 				<div>
-					<label htmlFor='age'>Age (Years)</label>
+					<label htmlFor='age'>Turtle Age (Years)</label>
 					<input
 						type='number'
 						name='age'
@@ -51,10 +52,10 @@ const UserForm = ({ onAddUser }) => {
 						onChange={ageChangeHandler}
 					/>
 				</div>
-				<button>Add User</button>
+				<button>Add Turtle</button>
 			</form>
 		</Card>
 	);
 };
 
-export default UserForm;
+export default TurtleForm;

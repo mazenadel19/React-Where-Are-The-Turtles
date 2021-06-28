@@ -1,37 +1,37 @@
 import { useState } from 'react';
 import './App.css';
-import UserForm from './components/NewUser/UserForm';
-import UsersList from './components/Users/UsersList/UsersList';
+import TurtleForm from './components/NewTurtles/TurtleForm';
+import TurtleList from './components/Turtles/TurtlesList/TurtlesList';
 
 function App() {
-	const [users, setUsers] = useState([]);
+	const [turtles, setTurtles] = useState([]);
 
-	const AddUsersHandler = (user) => {
-		console.log(user);
-		const newUser = {
+	const AddTurtleHandler = (turtle) => {
+		const newTurtle = {
 			id: Math.random().toString(),
-			...user,
+			...turtle,
 		};
-		setUsers((prevUsers) => {
-			return [newUser, ...prevUsers];
+		setTurtles((prevTurtle) => {
+			return [newTurtle, ...prevTurtle];
 		});
 	};
 
-	const DeleteUserHandler = (id) => {
-		console.log(id);
-		setUsers((prevUsers) => {
-			const updatedUsers = prevUsers.filter((user) => user.id !== id);
-			return updatedUsers;
+	const DeleteTurtleHandler = (id) => {
+		setTurtles((prevTurtles) => {
+			const updatedTurtles = prevTurtles.filter((turtle) => turtle.id !== id);
+			return updatedTurtles;
 		});
 	};
 
 	let content = <img src='/turtles.gif' alt='' />;
-	if (users.length > 0)
-		content = <UsersList users={users} onDeleteUser={DeleteUserHandler} />;
+	if (turtles.length > 0)
+		content = (
+			<TurtleList turtles={turtles} onDeleteTurtle={DeleteTurtleHandler} />
+		);
 
 	return (
 		<div className='App'>
-			<UserForm onAddUser={AddUsersHandler} />
+			<TurtleForm onAddTurtle={AddTurtleHandler} />
 			{content}
 		</div>
 	);

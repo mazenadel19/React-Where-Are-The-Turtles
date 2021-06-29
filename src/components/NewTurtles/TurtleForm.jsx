@@ -66,6 +66,7 @@ const TurtleForm = ({ onAddTurtle }) => {
 							id='name'
 							value={name}
 							onChange={nameChangeHandler}
+							className={`${!name && styles['invalid-input']}`}
 						/>
 					</div>
 					<div>
@@ -76,6 +77,7 @@ const TurtleForm = ({ onAddTurtle }) => {
 							id='age'
 							value={age}
 							onChange={ageChangeHandler}
+							className={`${!age && styles['invalid-input']}`}
 						/>
 					</div>
 					<Button type='submit'>Add Turtle</Button>
